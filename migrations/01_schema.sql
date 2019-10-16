@@ -1,3 +1,6 @@
+-- CREATE DATABASE lightbnb;
+-- \c lightbnb
+
 DROP TABLE IF EXISTS users CASCADE;
 DROP TABLE IF EXISTS properties CASCADE;
 DROP TABLE IF EXISTS reservations CASCADE;
@@ -42,7 +45,7 @@ CREATE TABLE reservations (
 );
 
 
-CREATE TABLE propery_reviews (
+CREATE TABLE property_reviews (
   id SERIAL PRIMARY KEY NOT NULL,
   guest_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   reservation_id INTEGER REFERENCES reservations(id) ON DELETE CASCADE,
